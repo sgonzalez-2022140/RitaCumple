@@ -119,7 +119,7 @@
 
     <div class="background-design"></div>  
 
-    <div class="card-container" onclick="this.querySelector('.card-flip').classList.toggle('flipped');">  
+    <div class="card-container" onclick="flipCard()">  
         <div class="card-flip">  
             <div class="card-front d-flex justify-content-center align-items-center flex-column">  
                 <div class="bounce">Carta virtual para la Dr  
@@ -167,9 +167,13 @@
             }  
         }  
 
-        document.addEventListener("DOMContentLoaded", function() {  
-            if (textArray.length) setTimeout(type, newTextDelay + 250);  
-        });  
+        function flipCard() {  
+            const cardFlip = document.querySelector('.card-flip');  
+            cardFlip.classList.toggle('flipped');  
+            if (cardFlip.classList.contains('flipped')) {  
+                if (textArray.length) setTimeout(type, newTextDelay + 250);  
+            }  
+        }  
     </script>  
 </body>  
 </html>  
